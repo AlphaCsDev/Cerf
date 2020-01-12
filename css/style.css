@@ -270,7 +270,7 @@ input[type="radio"].visually-hidden {
 
 	background-image: url("../img/icon-bookmark.svg");
 	background-position: 0 0;
-	background-repat: no-repeat;
+	background-repeat: no-repeat;
 
 	opacity: 0.3;
 }
@@ -306,7 +306,7 @@ input[type="radio"].visually-hidden {
 
 	background-image: url("../img/icon-cart.svg");
 	background-position: 0 0;
-	background-repat: no-repeat;
+	background-repeat: no-repeat;
 
 	opacity: 0.3;
 }
@@ -614,7 +614,7 @@ input[type="radio"].visually-hidden {
 .site-navigation a:active {
 	opacity: 0.5;
 
-	backgrond-color: #1d2739;
+	background-color: #1d2739;
 }
 
 /* main content */
@@ -653,7 +653,7 @@ input[type="radio"].visually-hidden {
 	display: flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	justify-conten: flex-start;
+	justify-content: flex-start;
 	margin-bottom: 20px;
 	padding: 0;
 
@@ -698,7 +698,7 @@ input[type="radio"].visually-hidden {
 
 /* categories */
 
-/*.categories {
+.categories {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -906,7 +906,7 @@ input[type="radio"].visually-hidden {
 	left: 32px;
 
 	padding: 12px 47px;
-}*/
+}
 
 /* popular sections */
 
@@ -1137,7 +1137,7 @@ input[type="radio"].visually-hidden {
 .catalog-item .price {
 	position: relative;
 
-	width: 100px;
+	width: 80px;
 	margin: 10px auto;
 	margin-bottom: 20px;
 	padding: 10px 30px;
@@ -1268,7 +1268,6 @@ input[type="radio"].visually-hidden {
 	padding: 0;
 
 	list-style: none;
-	cursor: pointer;
 }
 
 .service-slider::after {
@@ -1320,7 +1319,6 @@ input[type="radio"].visually-hidden {
 .service-card {
 	position: relative;
 	z-index: 4;
-
 	display: block;
 	width: 620px;
 }
@@ -1329,6 +1327,7 @@ input[type="radio"].visually-hidden {
 	position: absolute;
 	top: 0;
 	left: 0;
+	
 }
 
 .service-card::after {
@@ -1336,14 +1335,13 @@ input[type="radio"].visually-hidden {
   	position: absolute;
   	top: 0;
   	right: 0;
-  	z-index: -1;
+  	z-index: 1;
 
  	width: 500px;
  	height: 300px;
 
  	background-repeat: no-repeat;
 }
-
 #service-delivery::after {
 	background-image: url("../img/delivery.jpg");
 	background-position: 30px 20px;
@@ -2079,7 +2077,6 @@ input[type="range"]::-moz-range-progress {
 
 .modal {
 	position: fixed;
-
 	display: none;
 }
 
@@ -2225,7 +2222,7 @@ input[type="range"]::-moz-range-progress {
 
 .modal-map {
 	left: 50%;
-	bottom: 350px;
+	top:100px;
 	z-index: 999;
 
 	width: 940px;
@@ -2236,7 +2233,13 @@ input[type="range"]::-moz-range-progress {
 
 	        box-shadow: 0px 0px 14.72px 1.28px rgba(47, 42, 43, 0.5);
 }
+#map{
+	display: block;
 
+}
+#bigMap{
+	display: none;
+}
 .modal-success {
 	top: 410px;
 	left: 50%;
