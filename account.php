@@ -12,17 +12,50 @@
 
 <body>
 	<?php include 'PHP/includes/Header.php'; ?>
-
+	<?php $user = $_SESSION['user'];
+	$id = $user['IDUser'];
+	$q = mysqli_query($connection, "SELECT * FROM `users` where `IDUser`= '$id'");
+	$newUser = mysqli_fetch_assoc($q); ?>
 	<main class="order-page">
-		<h1 class="page-title">Мої замовлення</h1>
+		<h1 class="page-title toggleAccount">Персональний аккаунт</h1>
+		<section class="orders  dropAcc container">
+			<p class="order">
+				<label for="TelNumber" class="date">Ім'я</label>
+				<input name="number" readonly="readonly" type="text" id="UserName" value="<?php echo $newUser['userName']; ?>">
+			</p>
+			<p class="order">
+				<label for="TelNumber" class="date">Прізвище</label>
+				<input name="number" readonly="readonly" type="text" id="UserSurname" value="<?php echo $newUser['userSurname']; ?>">
+			</p>
+			<p class="order">
+				<label for="AddressDel" class="date">Адреса доставки</label>
+				<input name="address" type="text" id="AddressDel" value="<? if ($newUser['userAddress']) {
+																				echo $newUser['userAddress'];
+																			} ?>">
+				<?php if (!$newUser['userAddress']) { ?>
+					<button class="button SendAddress" style=" margin-left:40px;background-color:#ee3643">Зберегти</button><? } ?>
+			</p>
+			<p class="order">
+				<label for="TelNumber" class="date">Номер телефону</label>
+				<input name="number" type="text" id="TelNumber" value="<? if ($newUser['userNumber']) {
+																			echo $newUser['userNumber'];
+																		} ?>">
+				<?php if (!$newUser['userNumber']) { ?>
+					<button class="button SendNumber" style=" margin-left:40px;background-color:#ee3643">Зберегти</button><? } ?>
+			</p>
 
-		<section class="orders container">
+		</section>
+		<h1 class="page-title toggleOrder">Мої замовлення</h1>
+
+		<section class="orders dropOrder container">
 			<ul>
 				<li class="order order-top">
 					<div class="date">Дата</div>
-					<div class="numb">Номер</div>
+					<div class="cost">Номер</div>
+					<div class="numb">Назва</div>
+					<div class="image">Зображення</div>
 					<div class="cost">Загальна сума</div>
-					<div class="address">Адреса доставки</div>
+
 				</li>
 				<?php include 'PHP/includes/Cart.php' ?>
 			</ul>

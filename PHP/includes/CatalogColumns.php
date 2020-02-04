@@ -54,7 +54,6 @@
 
             <h2 class="visually-hidden">Каталог</h2>
             <ul class="catalog-items">
-
             </ul>
         </section>
 

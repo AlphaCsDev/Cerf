@@ -20,7 +20,6 @@ function Show($query)
 		<li class="catalog-item" tabindex="0">
 			<div class="actions">
 				<a class="button buy" id="<?php echo $commF['IDCommodity'] ?>">Купити</a>
-				<a class="button bookmark">В закладки</a>
 				<a class="characteristic">Характеристика</a>
 				<p class="ddescription"><?php echo $commF['Characteristic'] ?></p>
 			</div>

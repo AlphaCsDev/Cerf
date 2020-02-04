@@ -1,7 +1,6 @@
 <section class="modal modal-success">
 	<h2 class="visually-hidden">Успішно</h2>
 	<img src="img/success.png" alt="Успіх" width="300" height="300">
-	<button class="modal-close" type="button">Закрити</button>
 </section>
 
 <section class="modal modal-confirm-cart">
@@ -20,17 +19,25 @@
 		<p>
 			<label for="confirm-order-address">Адреса доставки:</label>
 			<input name="address" type="text" id="confirm-order-address" placeholder="Адреса доставки">
+			<ul class="DropAddress">
+			</ul>
 		</p>
 		<p>
 			<label for="confirm-order-delivery">Спосіб доставки:</label>
-			<input name="delivery" type="text" id="confirm-order-delivery" placeholder="Спосіб доставки">
+			<input readonly="readonly" name="delivery" type="text" id="confirm-order-delivery" placeholder="Спосіб доставки" value="">
+			<ul class="DropDelivery">
+				<li class="DeliveryType" data-id="Нова Пошта">Нова Пошта</li>
+				<li class="DeliveryType" data-id="Міст Експрес">Міст Експрес</li>
+				<li class="DeliveryType" data-id="Укр Пошта">Укр Пошта</li>
+			</ul>
 		</p>
 	</form>
 	<p class="confirm-order-text">До оплати:</p>
-	<p class="confirm-order-price">20000 <span>ГРН</span></p>
+	<p class="confirm-order-price"></p>
+
 	<div class="сonfirm-form">
-		<button class="confirm-button" type="submit" form="confirm-cart">Замовити</button>
-		<button class="confirm-button" type="submit" form="confirm-cart">Відмінити</button>
+		<button class="confirm-button ConfirmOrder" type="submit" form="confirm-cart">Замовити</button>
+		<button class="confirm-button CancelOrder" type="submit" form="confirm-cart">Відмінити</button>
 	</div>
 	<button class="modal-close" type="button">Закрити</button>
 </section>

@@ -44,10 +44,6 @@ LogIn[0].onclick = function () {
     }
 }
 
-for (var i = 0; i < modal.length; i++){
-    buttonClose[i].onclick = NotToOpen;
-}
-
 
 function NotToOpen() {
     for (var i = 0; i < modal.length; i++) {

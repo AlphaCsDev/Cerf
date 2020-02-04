@@ -272,7 +272,7 @@ width: 500px;
 
 	background-image: url("../img/icon-bookmark.svg");
 	background-position: 0 0;
-	background-repat: no-repeat;
+	background-repeat: no-repeat;
 
 	opacity: 0.3;
 }
@@ -308,7 +308,7 @@ width: 500px;
 
 	background-image: url("../img/icon-cart.svg");
 	background-position: 0 0;
-	background-repat: no-repeat;
+	background-repeat: no-repeat;
 
 	opacity: 0.3;
 }
@@ -599,7 +599,7 @@ width: 500px;
 .site-navigation a:active {
 	opacity: 0.5;
 
-	backgrond-color: #1d2739;
+	background-color: #1d2739;
 }
 
 /* main content */
@@ -607,6 +607,7 @@ width: 500px;
 .page-title {
 	width: 910px;
 	margin: 0 auto;
+	
 	margin-bottom: 20px;
 	padding: 30px 0 30px 30px;
 
@@ -619,7 +620,9 @@ width: 500px;
 
 	background-color: #f2f6f8;
 }
-
+.page-title:hover{
+	background-color: #dfdfdf;
+}
 .container h2 {
 	margin: 0;
 
@@ -638,7 +641,7 @@ width: 500px;
 	display: flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	justify-conten: flex-start;
+	justify-content: flex-start;
 	margin-bottom: 20px;
 	padding: 0;
 
@@ -912,15 +915,13 @@ width: 500px;
 .catalog-item .characteristic:active {
 	opacity: 0.3;
 }
+
 .ddescription{
 	position: absolute;
-  left: -100px;
 	top: 325px;
-}
-.ddescription{
-	display: block;
+	display: flex;
 	height: auto;
-	width: 700px;
+	width: 500px;
 	border: 1px solid #000000;
 	background-color: white;
 	color: #1F1C1C;
@@ -930,95 +931,79 @@ width: 500px;
 	text-align: center;
 	padding: 3px;
 }
-.wtf{
-	position: absolute;
-	width: 414px;
-	height: 54px;
-	left: 100px;
-	top: 310px;
-	font-size: 1.7em;
-	font-family: Calibri;
-	color: #1F1C1C;
-}
+
 .number{
 	color: #000000;
 	font-size: large;
 }
-.wtf1{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 380px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.find {
+    margin-bottom: 50px;
+    padding: 0;
+    font: inherit;
+    background-color: #32425c;
 }
 
-.wtf2{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 425px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.find-text {
+    margin-bottom: 30px;
+	padding: 10px 100px 0 100px;
+	height: 30px;
 }
 
-.wtf3{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 470px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.find-list {
+    margin: 0;
+    padding: 0 100px 10px 100px;
+    list-style: none;
 }
 
-.wtf4{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 515px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.find-city {
+	height: 20px;
+    margin-bottom: 15px;
 }
 
-.wtf5{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 560px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.city-text {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+.city-address {
+    margin: 0;
+    padding: 0;
 }
 
-.wtf6{
+.city-number {
 	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 605px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+	width: 200px;
+	right: 150px;
 }
 
-.wtf7{
-	position: absolute;
-	width: auto;
-	height: 54px;
-	left: 130px;
-	top: 650px;
-	font-size: 1.1em;
-	font-family: Calibri;
-	color: #000000;
+.city-number a:link {
+color: white;
+}
+.city-number a:hover {
+color: #0078D7;
+cursor: pointer;
+}
+.city-number a:active {
+color: #0078D7;
+cursor: pointer;
+}
+
+.city-arrow{
+    position: absolute;
+    top: -2px;
+    right:  0px;
+    width: 15px;
+    height: 15px;
+    border: solid #0078D7;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+ -webkit-transform: rotate(45deg);
 }
 
 .backgrond-contacts {
@@ -1026,7 +1011,6 @@ width: 500px;
   height: 400px;
 	background-color: #F3F7F8;
 }
-
 
 .catalog-item .image {
 	width: 200px;
@@ -1812,6 +1796,10 @@ input[type="range"]::-moz-range-progress {
 	text-align: center;
 	background-color: #f7f3ec;
 }
+
+.dropOrder{
+	display: none;
+}
 .order:hover{
 
 	background-color: #cccccc;
@@ -1835,10 +1823,12 @@ input[type="range"]::-moz-range-progress {
 	width: 20%;
 }
 
-.order .address {
-	width: 40%;
+.order .image{
+	width: 200px !important;
 }
-
+.order image{
+	width: 200px !important; 
+}
 /* cart */
 
 .cart-catalog {
@@ -1850,7 +1840,10 @@ input[type="range"]::-moz-range-progress {
 }
 
 /* footer-top */
-
+footer{
+	position: absolute;
+	bottom: 0;
+}
 .page-footer .index-logo {
 	padding: 16px 0;
 
@@ -2107,8 +2100,20 @@ input[type="range"]::-moz-range-progress {
 	-webkit-box-shadow: 0px 20px 40px 0px rgba(41, 52, 73, 0.75);
 	        box-shadow: 0px 20px 40px 0px rgba(41, 52, 73, 0.75);
 }
-
-
+.DropAddress,
+.DropDelivery{
+	position: absolute;
+	top:100px;
+	right: 190px;
+	display:none;
+	
+}
+.DropAddress,
+.DropDelivery li{
+	font-size: 18px;
+	margin:10px;
+	list-style: none;
+}
 .modal-success img {
     display: block;
     margin: auto;
@@ -2128,7 +2133,7 @@ input[type="range"]::-moz-range-progress {
 	        justify-content: space-between;
 	margin: 50px 80px 0 80px;
 }
-
+.orders p,
 .confirm-cart-form p,
 .confirm-order-form p,
 .request-form p,
@@ -2137,6 +2142,7 @@ input[type="range"]::-moz-range-progress {
 	margin: 0;
 	margin-bottom: 19px;
 }
+.orders p,
 .modal-confirm-cart p,
 .confirm-cart-form p {
     margin-top: 20px;
@@ -2144,12 +2150,15 @@ input[type="range"]::-moz-range-progress {
 }
 
 .confirm-order-form label,
+.orders label,
 .request-form label,
 .sign-up-form label,
 .sign-in-form label {
 	display: block;
 	margin-bottom: 12px;
 }
+.DeliveryMethod,
+.orders input[type="text"],
 .confirm-order-form input[type="text"],
 .request-form input[type="text"],
 .request-form input[type="email"],
@@ -2167,11 +2176,13 @@ input[type="range"]::-moz-range-progress {
 	border: 2px solid #dee3e4;
 	border-radius: 3px;
 }
+.orders input[type="text"],
 .sign-up-form input[type="email"]{
 	width: 460px;
 }
 
 .confirm-order-form input,
+.confirm-order-form span,
 .request-form input,
 .request-form textarea,
 .sign-up-form input,
@@ -2243,8 +2254,8 @@ input[type="range"]::-moz-range-progress {
 
 .confirm-button {
     width: 100px;
-    padding: 10px 0;
-
+	padding: 10px 0;
+	margin: 10px;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 18px;

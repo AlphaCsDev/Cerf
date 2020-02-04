@@ -14,7 +14,7 @@ if ($data == "AllUsers") {
                 <th>userLogin</th>
                 <th>userPassword</th>
                 <th>userEmail</th>
-                <th>userAdress</th>
+                <th>userAddress</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@ if ($data == "AllUsers") {
                 <td>{$loop['userLogin']}</td>
                 <td>" . substr($loop['userPassword'], 0, 8) . "</td>
                 <td>{$loop['userEmail']}</td>
-                <td>{$loop['userAdress']}</td>
+                <td>{$loop['userAddress']}</td>
             </tr>
 ";
 }}

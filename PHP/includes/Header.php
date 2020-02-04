@@ -74,9 +74,6 @@
             <a href="catalog.php">Каталог</a>
         </li>
         <li>
-            <a href="delivery.php">Доставка</a>
-        </li>
-        <li>
             <a href="contacts.php">Контакти</a>
         </li>
     </ul>

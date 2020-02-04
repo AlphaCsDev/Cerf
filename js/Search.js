@@ -21,9 +21,25 @@
                 
             }
         });
+    }); 
+
+$('.city-arrow').click(function () {
+    var arrow = $(this).attr("data-id");
+    $('.modal-map').data("id", arrow);
+    $('.modal-map[data-id ='+arrow+']').slideDown();
+
+
+    
+
+
+    $(".modal-close").click(function () {
+        $(".modal").hide();
+    })
+});
+
+
     
 
 
 
-
-    });
+ 

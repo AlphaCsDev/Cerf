@@ -1,6 +1,4 @@
 var cart = {};
-var decline = $('.modal-confirm-cart');
-
 function AddToCart() {
     var id = $(this).attr("id");
     if (cart[id] === undefined) {
@@ -28,19 +26,21 @@ function SaveCart() {
             'DateTime': date
         },
         success(data) {
-            /*alert(data);*/
-            $('.modal-success').show(1000);
-            $('.modal-success').hide(1000);
+            
+            if(data){
+                alert(data);
+            }
+            $('.modal-success').slideDown();
+            setTimeout(() => {        
+            $('.modal-success').slideUp(1500);
+            }, 1000);
         }
     });
 }
-$('.order').click(function () {
-    $('.modal-confirm-order').show();
-})
+
 $(".close").click(function () {
     var id = $(this).attr("id");
-    console.log(id);
-    decline.show();
+    $('.modal-confirm-cart').show();
     $(".DeleteFrom").bind("click", function () {
         console.log(id);
         $.ajax({
@@ -54,10 +54,79 @@ $(".close").click(function () {
                 document.location.href = "account.php";
             }
         });
+        $('.CloseConfirm').click(function () {
+            $('.modal-confirm-cart').hide();
+        })
     })
 });
-$(".CloseConfirm").click(function name(params) {
-    $(".modal-confirm-cart").hide();
+$(".modal-close").click(function () {
+    $(".modal").hide();
 })
 
 $(".buy").bind("click", AddToCart);
+
+$('.toggleAccount').click(function () {
+    $('.dropAcc').toggle(500,function () {
+        $('.dropOrder').show(500);
+    });
+
+})
+$('.toggleOrder').click(function () {
+    $('.dropOrder').toggle(500,function () {
+        $('.dropAcc').show(500);
+    });
+
+})
+$('#confirm-order-address').click(function () {
+    $('.DropAddress').toggle();
+    $('.AddressType').click(function () {
+        $('#confirm-order-address').val($(this).attr("data-id"));
+
+    })
+})
+$('#confirm-order-delivery').click(function () {
+    $('.DropDelivery').toggle(500);
+    $('.DeliveryType').click(function () {
+        $('#confirm-order-delivery').val($(this).attr("data-id"));
+        
+    })
+})
+$('.SendAddress').click(function () {
+    var address = $('#AddressDel').val();
+    if (address == "" || (address.length < 5)) { return }
+    $.ajax({
+        type: "GET",
+        url: "PHP/AddressAndNumber.php",
+        data: { "address": address },
+        dataType: "text",
+        success(data) {
+        }
+    });
+    
+})
+$('.SendNumber').click(function () {
+    var number = $('#TelNumber').val();
+    if (number == "" || (number.length < 5)){return}
+        $.ajax({
+            type: "GET",
+            url: "PHP/AddressAndNumber.php",
+            data: { "number": number},
+            dataType: "text",
+            success(data) {
+            }
+        });
+})
+$('.orderM').click(function () {
+    var idOrder = $(this).attr("data-id");
+    var ConOrder = $('.modal-confirm-order');
+    ConOrder.show();
+    $.ajax({
+        type: "GET",
+        url: "PHP/AddressAndNumber.php",
+        data: { "idOrder": idOrder },
+        dataType: "text",
+        success: function (response) {
+            $('.confirm-order-price').text(response + " ГРН");
+        }
+    });
+})

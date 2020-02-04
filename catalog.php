@@ -35,7 +35,7 @@
 
         <h1 class="page-title">Перфоратори</h1>
 
-        <?php include 'PHP/includes/CatalogColumns.php' ?>
+        <?php include 'PHP/includes/CatalogColumns.php' ;?>
 
         <article class="description">
             <div class="container">
@@ -46,7 +46,8 @@
 
     </main>
 
-    <?php include 'PHP/includes/Footer.php'; ?>
+    <?php include 'PHP/includes/Footer.php';
+    include 'PHP/includes/MapAndForm.php'; ?>
 
     <?php
     include 'PHP/includes/SignUp.php';

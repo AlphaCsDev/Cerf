@@ -5,13 +5,6 @@ var datas = {
     "priceMin": Min,
     "priceMax": Max,
 };
-function s(Sel, Que) {
-    datas = {
-        "priceMin": Min,
-        "priceMax": Max,
-        [Sel]: Que
-    }
-}
 
 function Show(datas) {
     $.ajax({
@@ -104,7 +97,7 @@ $(".filter-input-radio").bind("click", function () {
     $("#filter-price-max-output").html(31000);
 });
 
-$(".filter-input-checkbox").bind("click", function () {
+    $(".filter-input-checkbox").bind("click", function () {
     $(".filter-input-radio").prop("checked", false);
 
     $("#filter-price-min").val(0);
@@ -117,7 +110,6 @@ $(".filter-input-checkbox").bind("click", function () {
     checked.each(function name() {
         CheckboxesUsed.push($(this).attr("name"));
     })
-    console.log(CheckboxesUsed);
     datas = {
         "priceMin": Min,
         "priceMax": Max,
@@ -129,7 +121,5 @@ $(".filter-input-checkbox").bind("click", function () {
 $(document).ready(function () {
 
     ShowByPrice();
-$(".sort-to-down").bind("click", function() {s("Low","DESC");});
-$(".sort-to-high").bind("click", function() {s("High","ASC");});
 
 });
